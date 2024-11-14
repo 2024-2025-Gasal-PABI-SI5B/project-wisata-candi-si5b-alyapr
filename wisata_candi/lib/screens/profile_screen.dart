@@ -9,10 +9,25 @@ class ProfileScreen extends StatefulWidget {
 
 class _ProfileScreenState extends State<ProfileScreen> {
   //TODO : 1. Deklarasikan variabel yang dibutuhkan
-  bool isSignedIn = true;
+  bool isSignedIn = false;
   String fullName = 'Alya Putri';
   String userName = '';
   int favoriteCandiCount = 0;
+
+  //TODO 5. Implementasi fungsi SignIn
+  void signIn(){
+    setState(() {
+      isSignedIn = !isSignedIn;
+    });
+  }
+
+  //TODO 6. Implementasi fungsi SignOut
+  void signOut(){
+    setState(() {
+      isSignedIn = !isSignedIn;
+    });
+  }
+
   @override
   Widget build(Object context) {
     return Scaffold(
@@ -173,11 +188,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: Text(
                         ': $favoriteCandiCount',
                         style: const TextStyle(fontSize: 18),
-                      ),
-                    ),
+                      ),),
                   ],
                 ),
-                //TODO : 4. Buat bagian profile action (isinya tombol signin/signup)
+                //TODO : 4. Buat bagian profile action (isinya tombol signin/signout)
+                const SizedBox(
+                  height: 4,
+                ),
+                Divider(
+                  color: Colors.deepPurple[100],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                isSignedIn 
+                ? TextButton(onPressed: signOut, child: Text('Sign Out'))
+                : TextButton(onPressed: signIn, child: const Text('Sign in'))
               ],
             ),
           ),
