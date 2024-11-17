@@ -16,11 +16,24 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: "Wisata Candi",
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          appBarTheme: const AppBarTheme(
+              iconTheme: IconThemeData(color: Colors.deepPurple),
+              titleTextStyle: TextStyle(
+                color: Colors.deepPurple,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              )),
+          colorScheme:
+              ColorScheme.fromSeed(seedColor: Colors.deepPurple).copyWith(
+            primary: Colors.deepPurple,
+            surface: Colors.deepPurple[100],
+          ),
           useMaterial3: true),
-      // home: DetailScreen(candi: candiList[0],),
+      // home: DetailScreen(
+      // candi: candiList[0],
+      // ),
       // home: ProfileScreen(),
-      home: SigninScreen(),
+      home: SignInScreen(),
     );
   }
 }
