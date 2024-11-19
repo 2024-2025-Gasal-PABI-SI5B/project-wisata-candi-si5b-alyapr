@@ -26,7 +26,7 @@ class MainApp extends StatelessWidget {
           colorScheme:
               ColorScheme.fromSeed(seedColor: Colors.deepPurple).copyWith(
             primary: Colors.deepPurple,
-            surface: Colors.deepPurple[100],
+            surface: Colors.deepPurple[50],
           ),
           useMaterial3: true),
       // home: DetailScreen(

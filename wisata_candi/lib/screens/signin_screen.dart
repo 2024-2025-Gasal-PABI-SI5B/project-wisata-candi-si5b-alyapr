@@ -65,6 +65,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                   ? Icons.visibility_off
                                   : Icons.visibility,
                             ))),
+                            obscureText: _obscurePassword,
                   ),
                   const SizedBox(
                     height: 20,
@@ -74,7 +75,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     child: const Text('Sign In'),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   // TextButton(
                   //     onPressed: () {},
